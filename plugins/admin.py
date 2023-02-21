@@ -40,21 +40,9 @@ async def vip1(bot,update):
 async def vip2(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
-	inlimit  = 53687091200
-	uploadlimit(int(user_id),53687091200)
-	usertype(int(user_id),"VIP2")
-	addpre(int(user_id))
-	await update.message.edit("Added successfully To Premium Upload limit 50 GB")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 2 check your plan here /myplan")
-	
-@Client.on_callback_query(filters.regex('vip3'))
-async def vip3(bot,update):
-	id = update.message.reply_to_message.text.split("/addpremium")
-	user_id = id[1].replace(" ", "")
 	inlimit  = 503687091200
 	uploadlimit(int(user_id),503687091200)
-	usertype(int(user_id),"VIP3")
+	usertype(int(user_id),"VIP2")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Unlimited Uplodes")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 3 check your plan here /myplan")
-
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 2 check your plan here /myplan")
