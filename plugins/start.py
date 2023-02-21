@@ -10,11 +10,11 @@ from helper.database import  insert ,find_one,used_limit,usertype,uploadlimit,ad
 from pyrogram.file_id import FileId
 from helper.database import daily as daily_
 from helper.date import add_date ,check_expi
-CHANNEL = os.environ.get('CHANNEL',"")
+CHANNEL = os.environ.get('CHANNEL',"-1001593981668")
 import datetime
 from datetime import date as date_
 STRING = os.environ.get("STRING","")
-log_channel = int(os.environ.get("LOG_CHANNEL",""))
+log_channel = int(os.environ.get("LOG_CHANNEL","-1001836874706"))
 token = os.environ.get('TOKEN','')
 botid = token.split(':')[0]
 
@@ -42,8 +42,8 @@ async def start(client,message):
 	**Document Or Video** and enter new filename to rename it__
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/Vimoviezchats") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url="https://t.me/Vimoviez") ]  ]))
+	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/Vipmoviezchats") ], 
+	[InlineKeyboardButton("Subscribe 🧐", url="https://t.me/Vipmoviez") ]  ]))
 	    return
 	if id:
 	    if old == True:
@@ -55,8 +55,8 @@ async def start(client,message):
 	**Document Or Video** and enter new filename to rename it__
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/Vimoviezchats") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url="https://t.me/Vimoviez") ]  ]))
+	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/Vipmoviezchats") ], 
+	[InlineKeyboardButton("Subscribe 🧐", url="https://t.me/Vipmoviez") ]  ]))
 	        except:
 	             return
 	    else:
@@ -71,8 +71,8 @@ async def start(client,message):
 	**Document Or Video** and enter new filename to rename it__
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/Vimoviezchats") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url="https://t.me/Vimoviez") ]  ]))
+	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/Vipmoviezchats") ], 
+	[InlineKeyboardButton("Subscribe 🧐", url="https://t.me/Vipmoviez") ]  ]))
 	         
 
 
@@ -139,7 +139,7 @@ async def send_doc(client,message):
        			used_limit(message.from_user.id,0)			     		
        		remain = limit- used
        		if remain < int(file.file_size):
-       		    await message.reply_text(f"Sorry! I can't upload files that are larger than {humanbytes(limit)}. File size detected {humanbytes(file.file_size)}\nUsed Daly Limit {humanbytes(used)} If U Want to Rename Large File Upgrade Your Plan ",reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("Upgrade 💰💳",callback_data = "upgrade") ]]))
+       		    await message.reply_text(f"Sorry! I can't upload files that are larger than {humanbytes(limit)}. File size detected {humanbytes(file.file_size)}\nUsed Daly Limit {humanbytes(used)} If U Want to Rename Large File Upgrade Your Plan,Ask Admin to Vip Plan for You",reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("Upgrade 💰💳",callback_data = "upgrade") ]]))
        		    return
        		if value < file.file_size:
        		    if STRING:
@@ -158,7 +158,7 @@ async def send_doc(client,message):
        		            await message.reply_text(f'Your Plane Expired On {buy_date}',quote=True)
        		            return
        		    else:
-       		          	await message.reply_text("Can't upload files bigger than 2GB ")
+       		          	await message.reply_text("Can't upload files bigger than 2GB Files Ask Admin to Vip Plan for You")
        		          	return
        		else:
        		    if buy_date:
