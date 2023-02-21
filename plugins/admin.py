@@ -48,7 +48,7 @@ async def vip2(bot,update):
 	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 2 check your plan here /myplan")
 	
 @Client.on_callback_query(filters.regex('vip3'))
-async def vip2(bot,update):
+async def vip3(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
 	inlimit  = 503687091200
